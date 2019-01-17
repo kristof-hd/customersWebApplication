@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang='nl' xmlns:th='http://www.thymeleaf.org'>
+<head>
+<link rel='icon' th:href='@{/images/customersWebApplication.ico}'
+	type='image/x-icon'>
+<title th:text='Customers'></title>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<link rel='stylesheet' th:href='@{/css/customersWebApplication.css}'>
+</head>
+<body>
+	<h1>Adding a customer</h1>
+	<form th:action='@{/toevoegen}' th:object='${customer}' method='post'>
+		<label>First name: <input th:field='*{firstname}' required autofocus>
+		</label> 
+		<label>Surname: <input th:field='*{surname}' required>
+		</label> <input type='submit' value='Submit'>
+	</form>
+</body>
+</html>
